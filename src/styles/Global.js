@@ -20,6 +20,23 @@ const GlobalStyle = createGlobalStyle`
     width: 100%;
     /* overflow-y: hidden; */
   }
+
+  .leaflet-top {
+    top: initial;
+    bottom: 1rem;
+  }
+
+  @media(max-width: 768px) {
+    html {
+      font-size: 56.25%;
+    }
+  }
+
+  @media(max-width: 425px) {
+    html {
+      font-size: 50%;
+    }
+  }
 `
 
 export default GlobalStyle;

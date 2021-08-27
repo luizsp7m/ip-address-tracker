@@ -1,4 +1,5 @@
 import { memo } from 'react';
+
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
 
 import L from 'leaflet'
@@ -12,7 +13,7 @@ const Map = ({ loading, position }) => {
 
   const markerIcon = new L.Icon({
     iconUrl: svgURL,
-    iconSize: [46, 56],
+    iconSize: [26, 36],
     iconAnchor: [18, 50],
     popupAnchor: [0, -32]
   })

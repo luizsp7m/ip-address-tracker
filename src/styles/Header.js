@@ -24,6 +24,7 @@ export const Title = styled.div`
 export const Search = styled.div`
   display: flex;
   align-items: center;
+  justify-content: center;
 
   > input {
     padding: 1.8rem;
@@ -55,6 +56,14 @@ export const Search = styled.div`
     border-bottom-right-radius: .5rem;
 
     cursor: pointer;
+  }
+
+  @media(max-width: 490px) {
+    width: 100%;
+
+    > input {
+      width: 80%;
+    }
   }
 `;
 
