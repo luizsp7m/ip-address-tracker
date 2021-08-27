@@ -1,6 +1,6 @@
 import { Container, Title, Search, Display, Card } from '../styles/Header';
 
-export default function Header() {
+export default function Header({ loading, ipInformation }) {
   return (
     <Container>
       <Title>IP Address Tracker</Title>
@@ -12,29 +12,29 @@ export default function Header() {
         </button>
       </Search>
 
-      <Display>
-        <Card>
-          <span>IP Address</span>
-          <h3>192.168.0.1</h3>
-        </Card>
+      {!loading && (
+        <Display>
+          <Card>
+            <span>IP Address</span>
+            <h3>{ipInformation.ip}</h3>
+          </Card>
 
-        <Card>
-          <span>Location</span>
-          <h3>Ourinhos, SP</h3>
-          <h3>36</h3>
-        </Card>
+          <Card>
+            <span>Location</span>
+            <h3>{ipInformation.location.city}, {ipInformation.location.region} <br /> {ipInformation.location.country} </h3>
+          </Card>
 
-        <Card>
-          <span>Timezone</span>
-          <h3>UTC-05:00</h3>
-        </Card>
+          <Card>
+            <span>Timezone</span>
+            <h3>UTC {ipInformation.location.timezone}</h3>
+          </Card>
 
-        <Card>
-          <span>ISP</span>
-          <h3>SpaceX</h3>
-          <h3>Starlink</h3>
-        </Card>
-      </Display>
+          <Card>
+            <span>ISP</span>
+            <h3>{ipInformation.isp}</h3>
+          </Card>
+        </Display>
+      )}
     </Container>
   );
 }

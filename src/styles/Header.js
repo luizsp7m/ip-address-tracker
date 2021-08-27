@@ -71,6 +71,20 @@ export const Display = styled.div`
   position: absolute;
   top: 20rem;
   box-shadow: 1px 1px 15px rgba(0, 0, 0, .25);
+
+  animation: fadeUp .5s ease-in-out forwards;
+
+  @keyframes fadeUp {
+    from {
+      transform: translateY(110px);
+      opacity: 0;
+    }
+
+    to {
+      transform: translateY(0px);
+      opacity: 1;
+    }
+  }
 `
 
 export const Card = styled.div`
