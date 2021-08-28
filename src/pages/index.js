@@ -6,6 +6,8 @@ import dynamic from 'next/dynamic';
 
 const Map = dynamic(() => import('../components/Map'), { ssr: false });
 
+import Head from 'next/head';
+
 export default function Home() {
 
   const ApiKey = process.env.NEXT_PUBLIC_IPIFY_KEY;
@@ -59,6 +61,10 @@ export default function Home() {
 
   return (
     <Fragment>
+      <Head>
+        <title>IP Address Tracker</title>
+      </Head>
+
       <Header loading={loading} ipInformation={ipInformation} handleSubmit={handleSubmit} />
       <Map loading={loading} position={position} />
     </Fragment>
